@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/play.css">
+</head>
+<body>
+    <div class="play">
+        <h1 id="gametime">0</h1>
+        <div class="Stickman"></div>
+        <div class="box"></div>
+        <div class="road"></div>
+    </div>
+    <script src="./js/jquery-1.12.4.js"></script>
+    <script>
+            heightH();
+            widthW();
+            spacing();
+        function heightH(){
+            var x = 100;
+            var y = 20;
+            var hh = parseInt(Math.random()*81+20);
+            $(".box").css({"height":hh})
+        }
+        function widthW(){
+            var x = 30;
+            var y = 5;
+            var ww = parseInt(Math.random()*26+5);
+            $(".box").css({"width":ww})
+        }
+        function spacing(){
+            var x = 343;
+            var y = 100;
+            var mmr = parseInt(Math.random()*244+100);
+            $(".box").css({"margin-right":mmr})
+        }
+        
+        for(var i = 0 ; i < $('.box').length ; i++ ){
+            console.log($('.box'));
+            // $('.box').append($('.box')[i])
+        }
+        
+        // $(".play").click(function(){
+            setInterval('time()',1000);
+        // })
+
+        function time(){
+            var tim = 0;
+            tim++;
+            $('#gametime').html($('#gametime').html()-0+1);
+        };
+        
+        // const app = $("#gametime").text();
+        // console.log(app);
+
+        function ppx(){
+            $('.Stickman').css({"top":"75%","transition":"1s"})
+        }
+        var ttime = 0;
+        $('.play').click(function(){
+            
+            if(ttime == 0){
+                ttime = 1;
+                var await = setInterval(function(){
+                    ttime--;
+                    if(ttime == 0){
+                        clearInterval(await);
+                    }
+                },1000);
+                // console.log('1111');
+                // alert('11111');
+                $('.Stickman').css({"top":"50%","transition":"1s"})
+            setTimeout(ppx,750)
+            }else{
+                console.log("22222");
+            }
+
+            // $('.Stickman').css({"top":"70%","transition":"1.5s"})
+        })
+        
+
+
+    </script>
+</body>
+</html>

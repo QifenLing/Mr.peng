@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+		tt = 0;
+		function clock()
+		{		
+			// var tt = document.getElementById("txt").value;
+			tt++;
+			document.getElementById("txt").value = tt;
+			// setInterval("clock()",1000);
+		}
+		
+	</script>
+</head>
+<body>
+    <input type="button" value="开始计时!" onclick="setInterval('clock()',1000);" />
+	<input type="text" value="0" id="txt" />
+	<p>点击上方按钮，从0开始计时</p>
+
+</body>
+</html>
